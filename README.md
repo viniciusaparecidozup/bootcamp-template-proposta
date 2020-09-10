@@ -1,5 +1,3 @@
 # Por favor faça um Fork desse projeto!
 
-## [Como fazer uma Fork](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo)
-
-## Bom treinamento!
+## Está em dúvida de como fazer um Fork? Não tem problema! [Aqui tem uma explicação do que entendemos que você deve considerar!](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo)
