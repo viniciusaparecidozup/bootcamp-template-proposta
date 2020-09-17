@@ -51,6 +51,18 @@ class PropostaResourceTest {
         assertCriaPropostaComSucesso(response, novaPropostaRequest);
     }
 
+    @Test
+    void criarPropostaSemSucesso() throws Exception {
+        final NovaPropostaRequest novaPropostaRequest = PropostaStub.criaPropostaCnpj(NovaPropostaRequest.class);
+        novaPropostaRequest.setDocumento(null);
+        mockMvc.perform(post(Routes.CRIAR_PROPOSTA)
+                .content(gson.toJson(novaPropostaRequest))
+                .contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().is4xxClientError());
+    }
+
     private void assertCriaPropostaComSucesso(NovaPropostaResponse response, NovaPropostaRequest novaPropostaRequest) throws Exception {
         mockMvc.perform(post(Routes.CRIAR_PROPOSTA)
                 .content(gson.toJson(novaPropostaRequest))
