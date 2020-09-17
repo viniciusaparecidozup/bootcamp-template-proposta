@@ -1,16 +1,20 @@
-package br.com.zup.bootcamp.proposta.request;
+package br.com.zup.bootcamp.dto.request;
 
-import br.com.zup.bootcamp.proposta.model.Proposta;
-import br.com.zup.bootcamp.proposta.validator.CpfCnpj;
-
-import java.math.BigDecimal;
+import br.com.zup.bootcamp.dto.DTO;
+import br.com.zup.bootcamp.model.Proposta;
+import br.com.zup.bootcamp.validator.CpfCnpj;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
+import java.math.BigDecimal;
 
-public class NovaPropostaRequest {
+@Getter
+@Setter
+public class NovaPropostaRequest extends DTO {
 
     @Email
     @NotBlank
@@ -37,8 +41,12 @@ public class NovaPropostaRequest {
         this.documento = documento;
     }
 
+    public NovaPropostaRequest() {
+
+    }
+
     public Proposta toModel() {
-        return new Proposta(email,nome,endereco,salario,documento);
+        return new Proposta(email, nome, endereco, salario, documento);
     }
 
 }

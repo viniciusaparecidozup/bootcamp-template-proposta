@@ -1,4 +1,4 @@
-package br.com.zup.bootcamp.proposta.validator;
+package br.com.zup.bootcamp.validator;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;

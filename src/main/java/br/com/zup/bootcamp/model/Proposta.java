@@ -1,15 +1,16 @@
-package br.com.zup.bootcamp.proposta.model;
+package br.com.zup.bootcamp.model;
 
-import br.com.zup.bootcamp.proposta.response.NovaPropostaResponse;
-import br.com.zup.bootcamp.proposta.validator.CpfCnpj;
+import br.com.zup.bootcamp.validator.CpfCnpj;
 
-import java.math.BigDecimal;
-import java.util.Objects;
-
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Positive;
+import java.math.BigDecimal;
+import java.util.Objects;
 
 @Entity
 public class Proposta {

@@ -1,4 +1,4 @@
-package br.com.zup.bootcamp.proposta.resources;
+package br.com.zup.bootcamp.resources;
 
 public class Routes {
 

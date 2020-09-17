@@ -1,7 +1,10 @@
-package br.com.zup.bootcamp.proposta.response;
+package br.com.zup.bootcamp.dto.response;
 
-import br.com.zup.bootcamp.proposta.model.Proposta;
-import br.com.zup.bootcamp.proposta.validator.CpfCnpj;
+import br.com.zup.bootcamp.dto.DTO;
+import br.com.zup.bootcamp.model.Proposta;
+import br.com.zup.bootcamp.validator.CpfCnpj;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -9,7 +12,9 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 import java.math.BigDecimal;
 
-public class NovaPropostaResponse {
+@Getter
+@Setter
+public class NovaPropostaResponse extends DTO {
 
     @Email
     @NotBlank
@@ -36,7 +41,10 @@ public class NovaPropostaResponse {
         this.documento = documento;
     }
 
-    public static NovaPropostaResponse toResponse(Proposta proposta){
+    public NovaPropostaResponse() {
+    }
+
+    public static NovaPropostaResponse toResponse(Proposta proposta) {
         return new NovaPropostaResponse(proposta.getEmail(),
                 proposta.getNome(),
                 proposta.getEndereco(),
