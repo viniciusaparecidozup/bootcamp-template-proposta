@@ -6,6 +6,7 @@ import br.com.zup.bootcamp.service.PropostaService;
 import br.com.zup.bootcamp.stub.PropostaStub;
 import com.google.gson.Gson;
 import lombok.extern.java.Log;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -36,6 +37,7 @@ class PropostaResourceTest {
     private Gson gson;
 
     @Test
+    @DisplayName("cria proposta com cpf")
     void criarPropostaCpfTest() throws Exception {
         final NovaPropostaResponse response = PropostaStub.criaPropostaCpf(NovaPropostaResponse.class);
         when(propostaService.criarProposta(any(NovaPropostaRequest.class))).thenReturn(PropostaStub.criaPropostaCpf());
@@ -44,6 +46,7 @@ class PropostaResourceTest {
     }
 
     @Test
+    @DisplayName("cria proposta com cnpj")
     void criarPropostaCnpjTest() throws Exception {
         final NovaPropostaResponse response = PropostaStub.criaPropostaCnpj(NovaPropostaResponse.class);
         when(propostaService.criarProposta(any(NovaPropostaRequest.class))).thenReturn(PropostaStub.criaPropostaCnpj());
@@ -52,6 +55,7 @@ class PropostaResourceTest {
     }
 
     @Test
+    @DisplayName("erro ao criar proposta, erro nos dados da request")
     void criarPropostaSemSucesso() throws Exception {
         final NovaPropostaRequest novaPropostaRequest = PropostaStub.criaPropostaCnpj(NovaPropostaRequest.class);
         novaPropostaRequest.setDocumento(null);
