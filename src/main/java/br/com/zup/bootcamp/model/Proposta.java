@@ -26,6 +26,9 @@ public class Proposta {
     @NotBlank
     private String documento;
 
+    public Proposta() {
+    }
+
     public Proposta(@Email @NotBlank String email, @NotBlank String nome,
                     @NotBlank String endereco, @Positive BigDecimal salario,
                     @CpfCnpj String documento) {
@@ -37,7 +40,6 @@ public class Proposta {
     }
 
     public Long getId() {
-        Objects.requireNonNull(id, "O objeto precisa estar salvo para invocar o getId");
         return id;
     }
 

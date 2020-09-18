@@ -3,7 +3,6 @@ package br.com.zup.bootcamp.service.impl;
 import br.com.zup.bootcamp.dto.request.NovaPropostaRequest;
 import br.com.zup.bootcamp.model.Proposta;
 import br.com.zup.bootcamp.repository.PropostaRepository;
-import br.com.zup.bootcamp.service.PropostaService;
 import br.com.zup.bootcamp.stub.PropostaStub;
 import br.com.zup.bootcamp.validator.PropostaValidator;
 import org.junit.jupiter.api.Assertions;
@@ -15,10 +14,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.util.Optional;
-
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.when;
 

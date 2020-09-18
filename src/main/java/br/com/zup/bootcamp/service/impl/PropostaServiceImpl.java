@@ -18,6 +18,7 @@ public class PropostaServiceImpl implements PropostaService {
     @Override
     public Proposta criarProposta(NovaPropostaRequest request) {
         propostaValidator.bloqueiaCriacaoDePropostaNoMesmoNumeroDocumento(request.getDocumento());
+        propostaValidator.checaRestricaoDocumento(request.getDocumento());
         Proposta novaProposta = request.toModel();
         return propostaRepository.save(novaProposta);
     }

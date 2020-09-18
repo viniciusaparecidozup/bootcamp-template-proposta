@@ -12,7 +12,7 @@
     <artifactId>bootcamp-template-proposta</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>proposta</name>
-    <description>Demo project for Spring Boot</description>
+    <description>Bootcamp Template Proposta</description>
 
     <properties>
         <java.version>11</java.version>
@@ -21,7 +21,7 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
